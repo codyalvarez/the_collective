@@ -1,0 +1,7 @@
+<h2> Edit Objective </h2>
+
+<form method="post" action="/objectives/<%=@objective.id%>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <input type="text" name="content" value="<%= @objective.content %>">
+  <input type="submit" value="submit">
+</form>
