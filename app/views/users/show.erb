@@ -1,0 +1,8 @@
+<p> Here are your current objectives, <%= @user.username %>
+<% @user.objectives.each do |objective| %>
+  <div>
+    <%= objective.name %>
+    <%= objective.idea %>
+    <%= objective.content %>
+  </div>
+<% end %>

@@ -1,1 +1,15 @@
 <h1>the collective.</h1>
+
+<nav>
+<% if logged_in? %>
+
+  <a href="/objectives/new"> Create New Objective </a>
+  <a href="/logout"> Log Out </a>
+  <p>Welcome, <%=current_user.username %></p>
+
+<% else %>
+  <a href="/signup">Sign Up</a>
+  <a href="/login"> Sign In </a>
+<%end %>
+
+</nav>
