@@ -22,7 +22,7 @@ class ObjectivesController < ApplicationController
       if params[:content] == ""
         redirect to "/objectives/new"
       else
-        @objective = current_user.objectives.build(content: params[:content])
+        @objective = current_user.objectives.build(name: params[:name], idea: params[:idea], content: params[:content])
         if @objective.save
           redirect to "/objectives/#{@objective.id}"
         else

@@ -1,8 +1,17 @@
-<p><%= @objective.content %>
+<h3>Name: </h3>
+<p><%= @objective.name %></p>
+<h3>Idea: </h3>
+<p><%= @objective.idea %></p>
+<h3>Content: </h3>
+<p><%= @objective.content %></p>
+
+<a href="/objectives/edit_objectives">Edit Objective </a> <br>
+<a href="/objectives">Return to profile </a> <br>
+
+<br>
 
 <form method="post" action="/objectives/<%=@objective.id%>/delete">
 <input id="hidden" type="hidden" name="_method" value="DELETE">
-<input type="submit" value="Delete Tweet">
+<input type="submit" value="Delete Objective">
 </form>
 
-<a href="/objectives/<%=@objective.id%>/edit">Edit Objective </a>

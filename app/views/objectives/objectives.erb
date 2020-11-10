@@ -3,10 +3,21 @@
 
 <% @objectives.each do |objective| %>
 <div>
-  <%= objective.name %>
-  <%= objective.idea %>
-  <%= objective.content %>
+  - <%= objective.name %> 
+  - <%= objective.idea %> 
 </div>
 <% end %>
 
-<a href="/objectives/<%=@objective.id%>/new">Edit Objective </a>
+<br>
+
+<a href="/objectives/new"> Create New Objective </a>
+
+<br>
+
+<a href="/users/logout">Log out </a>
+
+
+# take out idea, and content - allow name click able to show page ? 
+# fir logout page 
+
+
