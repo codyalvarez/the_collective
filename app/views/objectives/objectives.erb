@@ -3,18 +3,13 @@
 
 <% @objectives.each do |objective| %>
 <div>
-  - <%= objective.name %> 
-  - <%= objective.idea %> 
+  - <a ref="/objectives/edit_objectives"> <%= objective.name %> </a>
 </div>
 <% end %>
 
 <br>
 
 <a href="/objectives/new"> Create New Objective </a>
-
-<br>
-
-<a href="/objectives/edit_objectives">Edit Objective </a> <br>
 
 <br>
 
