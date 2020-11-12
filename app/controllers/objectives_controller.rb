@@ -35,6 +35,8 @@ class ObjectivesController < ApplicationController
   end
 
   get '/objectives/:id' do
+    # @objective = current_user.objectives.build(name: params[:name], idea: params[:idea], content: params[:content])
+    # @objective.save
     if logged_in?
       @objective = Objective.find_by_id(params[:id])
       erb :'objectives/show_objective'
