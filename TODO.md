@@ -1,6 +1,12 @@
-clicking on an objective in the "current objectives" should render to show_objectives with option to delete, or edit objective
+- objectives/show_objectives only renders the page - does no show choosen objective, and when clicking on edit objective and error occurs.
 
 maybe use link_to or list_path ??
 
-current objective > show_objective > edit_objective
+1. authentication  - bcrypt
+2. differnt types of request http request
+3. active record 
+4. has_many, belongs_to
 
+to see all objectives assiocisated with user.
+
+user.objectives

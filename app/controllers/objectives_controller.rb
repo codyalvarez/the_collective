@@ -36,7 +36,7 @@ class ObjectivesController < ApplicationController
 
   get '/objectives/:id' do
     if logged_in?
-      @objective = current_user.objectives.build(name: params[:name], idea: params[:idea], content: params[:content]) 
+      @objective = Objective.find_by(id: params[:id])
       erb :'objectives/show_objective'
     else
       redirect to '/login'
@@ -49,6 +49,7 @@ class ObjectivesController < ApplicationController
       if @objective && @objective.user == current_user
         erb :'objectives/edit_objective'
       else
+        flash[:notice] = "You are not authorized to make changes."
         redirect to '/objectives'
       end
     else
@@ -63,13 +64,13 @@ class ObjectivesController < ApplicationController
       else
         @objective = Objective.find_by_id(params[:id])
         if @objective && @objective.user == current_user
-          if @objective.update(content: params[:content])
+          if @objective.update(name: params[:name], idea: params[:idea], content: params[:content])
             redirect to "/objectives/#{@objective.id}"
           else
-            redirect to "/objectives/#{@object.id}/edit"
+            redirect to "/objectives/#{@objective.id}/edit"
           end
         else
-          redirect to '/onjectives'
+          redirect to '/objectives'
         end
       end
     else

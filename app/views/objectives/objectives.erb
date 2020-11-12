@@ -3,7 +3,7 @@
 
 <% @objectives.each do |objective| %>
 <div>
-  - <a href="/objectives/show_objectives"> <%= objective.name %> </a>
+  - <a href="/objectives/<%= objective.id %>"> <%= objective.name %> </a>
 </div>
 <% end %>
 
