@@ -1,7 +1,4 @@
-- edit an objective by clicking on it in /objectives - current objectives page** - should render to show_objectives with option to delete, or edit objective
+clicking on an objective in the "current objectives" should render to show_objectives with option to delete, or edit objective
 
-
-- edit_objective - after creation of object and on welcome page does
-
-
+current objective > show_objective > edit_objective
 
