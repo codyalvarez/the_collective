@@ -1,4 +1,8 @@
 class ObjectivesController < ApplicationController
+require 'sinatra'
+require 'sinatra/flash'
+
+enable :sessions
 
   get '/objectives' do
     if logged_in?
