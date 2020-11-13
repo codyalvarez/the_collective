@@ -1,10 +1,9 @@
+require 'rack-flash'
 class ObjectivesController < ApplicationController
-require 'sinatra'
-require 'sinatra/flash'
-
 enable :sessions
-
-  get '/objectives' do
+use Rack::Flash
+  
+get '/objectives' do
     if logged_in?
       @objectives = Objective.all
       erb :'objectives/objectives'
@@ -53,8 +52,7 @@ enable :sessions
       if @objective && @objective.user == current_user
         erb :'objectives/edit_objective'
       else
-        flash[:notice] = "You are not authorized to make changes."
-        redirect to '/objectives'
+        redirect to '/objectives', flash[:alert] = "You are not authorized to make changes."
       end
     else
       redirect to '/login'

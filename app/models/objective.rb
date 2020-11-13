@@ -3,5 +3,4 @@ class Objective < ActiveRecord::Base
   validates :name, presence: true
   validates :idea, presence: true
   validates :content, presence: true
- 
 end

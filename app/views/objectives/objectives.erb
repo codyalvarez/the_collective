@@ -1,6 +1,11 @@
 <p> Welcome, <%= current_user.username %>
 <h2> Current Objectives </h2>
 
+
+<% if flash.has?(:alert) %>
+  <%= flash[:alert] %>
+<% end %>
+
 <% @objectives.each do |objective| %>
 <div>
   - <a href="/objectives/<%= objective.id %>"> <%= objective.name %> </a>
@@ -14,6 +19,7 @@
 <br>
 
 <a href="/logout">Log out </a>
+
 
 
 
